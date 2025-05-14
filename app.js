@@ -267,40 +267,41 @@ arScene.style.display = "none";
 }
 
 // Component to send camera data to Unity every frame
-AFRAME.registerComponent('cameratransform', {
-    schema: {},
+// AFRAME.registerComponent('cameratransform', {
+//     schema: {},
 
-    tock: function () {
-        const el = this.el;
-        const camera = el.components.camera.camera;
+//     tock: function () {
+//         const el = this.el;
+//         const camera = el.components.camera.camera;
 
-        if (!camera) return;
+//         if (!camera) return;
 
-        // Get camera position and rotation
-        let position = new THREE.Vector3();
-        let quaternion = new THREE.Quaternion();
-        let scale = new THREE.Vector3();
+//         // Get camera position and rotation
+//         let position = new THREE.Vector3();
+//         let quaternion = new THREE.Quaternion();
+//         let scale = new THREE.Vector3();
 
-        el.object3D.matrix.clone().decompose(position, quaternion, scale);
+//         el.object3D.matrix.clone().decompose(position, quaternion, scale);
 
-        // Convert to array string
-        const posStr = position.toArray().join(",");
-        const rotStr = quaternion.toArray().join(",");
-        const projStr = [...camera.projectionMatrix.elements].join(",");
+//         // Convert to array string
+//         const posStr = position.toArray().join(",");
+//         const rotStr = quaternion.toArray().join(",");
+//         const projStr = [...camera.projectionMatrix.elements].join(",");
 
-        // Send to Unity
-        if (window.UnityInstance) {
-            UnityInstance.SendMessage("MainCamera", "SetPosition", posStr);
-            UnityInstance.SendMessage("MainCamera", "SetRotation", rotStr);
-            UnityInstance.SendMessage("MainCamera", "SetProjection", projStr);
+//         // Send to Unity
+//         if (window.UnityInstance) {
+//             UnityInstance.SendMessage("MainCamera", "SetPosition", posStr);
+//             UnityInstance.SendMessage("MainCamera", "SetRotation", rotStr);
+//             UnityInstance.SendMessage("MainCamera", "SetProjection", projStr);
 
-            // Optional: Send canvas size
-            const canvases = document.getElementsByTagName('canvas');
-            if (canvases.length > 0) {
-                const w = canvases[0].width;
-                const h = canvases[0].height;
-                // UnityInstance.SendMessage("Canvas", "SetSize", `${w},${h}`);
-            }
-        }
-    }
-});
+//             // Optional: Send canvas size
+//             const canvases = document.getElementsByTagName('canvas');
+//             if (canvases.length > 0) {
+//                 const w = canvases[0].width;
+//                 const h = canvases[0].height;
+//                 // UnityInstance.SendMessage("Canvas", "SetSize", `${w},${h}`);
+//             }
+//         }
+//     }
+// }
+                        );
