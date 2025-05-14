@@ -238,7 +238,7 @@ initOpenCv();
 // Start A-Frame Scene
 // =============
 window.cameraReady = function () {
-    startAFrameScene();
+    // startAFrameScene();
 };
 
 function startAFrameScene() {
