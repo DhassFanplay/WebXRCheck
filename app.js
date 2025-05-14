@@ -151,22 +151,22 @@ async function processBothDetectors(base64) {
                 let normalizedY = (floorBottomY / canvas.height) * 2 - 1;
                 let yUnity = -normalizedY * 0.5;
 
-                const cameraEl = document.getElementById('camera');
-                if (!cameraEl) return;
+                // const cameraEl = document.getElementById('camera');
+                // if (!cameraEl) return;
 
-                const camDir = new THREE.Vector3(0, 0, -1);
-                camDir.applyQuaternion(cameraEl.object3D.quaternion);
+                // const camDir = new THREE.Vector3(0, 0, -1);
+                // camDir.applyQuaternion(cameraEl.object3D.quaternion);
 
-                currentFloorPosition = {
-                    x: camDir.x * 2,
-                    y: yUnity,
-                    z: camDir.z * 2
-                };
-                console.error("Detecting Floor:", JSON.stringify(currentFloorPosition));
-                // Send floor position to Unity
-                if (window.UnityInstance) {
-                    UnityInstance.SendMessage("FloorDetector", "OnReceiveFloorPosition", JSON.stringify(currentFloorPosition));
-                }
+                // currentFloorPosition = {
+                //     x: camDir.x * 2,
+                //     y: yUnity,
+                //     z: camDir.z * 2
+                // };
+                // console.error("Detecting Floor:", JSON.stringify(currentFloorPosition));
+                // // Send floor position to Unity
+                // if (window.UnityInstance) {
+                //     UnityInstance.SendMessage("FloorDetector", "OnReceiveFloorPosition", JSON.stringify(currentFloorPosition));
+                // }
             }
 
             // Cleanup
