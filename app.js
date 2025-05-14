@@ -254,7 +254,7 @@ function startAFrameScene() {
     arScene.style.left = "0";
     arScene.style.width = "0vw";
     arScene.style.height = "0vh";
-
+arScene.style.display = "none";
     // Add camera
     const cameraEntity = document.createElement('a-entity');
     cameraEntity.setAttribute('id', 'camera');
