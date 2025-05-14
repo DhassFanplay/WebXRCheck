@@ -252,8 +252,8 @@ function startAFrameScene() {
     arScene.style.position = "absolute";
     arScene.style.top = "0";
     arScene.style.left = "0";
-    arScene.style.width = "100vw";
-    arScene.style.height = "100vh";
+    arScene.style.width = "0vw";
+    arScene.style.height = "0vh";
 
     // Add camera
     const cameraEntity = document.createElement('a-entity');
@@ -299,7 +299,7 @@ AFRAME.registerComponent('cameratransform', {
             if (canvases.length > 0) {
                 const w = canvases[0].width;
                 const h = canvases[0].height;
-                UnityInstance.SendMessage("Canvas", "SetSize", `${w},${h}`);
+                // UnityInstance.SendMessage("Canvas", "SetSize", `${w},${h}`);
             }
         }
     }
